@@ -1,0 +1,227 @@
+.editor-wrapper {
+  padding: 1rem;
+  position: absolute;
+  bottom: 185px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-80px);
+  height: 350px;
+  width: 1000px;
+  .editor {
+    height: 100%;
+    background-color: black;
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    border: 2px solid #f1f1f1;
+  }
+  .editor-nav {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .editor-toolbox {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .editor-nav, .editor-toolbox {
+    max-width: 200px;
+  }
+  .editor-nav, .editor-toolbox, .editor-content {
+    h3 {
+      margin: 0;
+    }
+    h4 { margin: 0.5rem };
+    .tool-list {
+      margin-left: 1rem;
+      margin-top: 0px;
+    }
+    .value {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+    .variable {
+      background-color: orange;
+      border-radius: 5px;
+    }
+    .value, .variable {
+      display: inline-block;
+      color: black;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .gem-container {
+      margin-bottom: 2px;
+      .gem {
+        position: relative;
+        display: inline-block;
+        .gem-contents {
+          padding: 2px;
+          display: inline-block;
+          border: 1px solid white;
+          cursor: 'move';
+          border-radius: 8px;
+          padding-left: 5px;
+          padding-right: 5px;
+          &.dragging {
+            border: 2px solid white;
+          }
+          position: relative;
+          background-color: red;
+        }
+        &.gem-category-Value .gem-contents {
+          background-color: blue;
+        }
+        &.gem-category-Comparison .gem-contents {
+          background-color: green;
+        }
+      }
+    }
+  }
+  .editor-zone {
+    height: 100%;
+    background: #1c1c1c;
+    margin: 1rem;
+    overflow-y: auto;
+    .editor-row {
+      &.is-over {
+        background-color: #f1f1f1;
+      }
+      background-color: #2c2c2c;
+      width: calc(100% - 16px);
+      min-height: 2rem;
+      line-height: 1.5rem;
+      padding: 8px;
+      margin-bottom: 9px;
+      &:nth-child(1) {
+        margin-top: 9px;
+      }
+    }
+    .gem {
+      .gem-text, .slot, .slot--filled {
+        &:not(:last-child) {
+          margin-right: 2px;
+        }
+        display: inline-block;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+      .slot-container {
+        transform: translateY(3px);
+      }
+      .slot {
+        width: 1rem;
+        &.is-over {
+          fill: #f1f1f1;
+        }
+        fill: gold;
+        color: black;
+        &.number {
+          background-color: #c0c0c0;
+        }
+      }
+      .slot--filled {
+        // border: 1px solid white;
+      }
+    }
+  }
+  .editor-toolbox {
+    overflow-y: auto;
+    .tool-category, .gem-category, .value-category {
+      margin-top: 5px;
+    }
+    .tool-category {
+      min-height: 2rem;
+    }
+    .gem-category, .value-category {
+      min-height: 1rem;
+    }
+    .tool-group, .tool-category, .tool-row {
+      background-color: transparent !important;
+      color: white;
+      padding-left: 0;
+      .tool-group-icon {
+        color: yellow;
+      }
+    }
+    .tool-row {
+      padding: 0px;
+    }
+    .tool-group {
+      margin-bottom: 0px;
+    }
+    .gem-group,
+    .gem-category,
+    .gem-row,
+    .value-group,
+    .value-category,
+    .value-row
+    .variable-group,
+    .variable-row,
+    {
+      margin-left: 1rem;
+      background-color: transparent !important;
+      color: white;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      min-height: 2rem;
+      .gem-category, .value-category {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .gem-group-icon {
+        color: yellow;
+      }
+    }
+    .value, .variable {
+      margin-left: 1rem;
+    }
+    .gem-group, .value-group {
+      margin: 0;
+    }
+    .gem-container {
+      margin-bottom: 4px;
+      margin-left: 1rem;
+      position: relative;
+      .gem {
+        .gem-contents {
+          .gem-text, .slot-container {
+            &:not(:last-child) {
+              margin-right: 2px;
+            }
+            display: inline-block;
+            padding-left: 2px;
+            padding-right: 2px;
+          }
+          .slot-container {
+            transform: translateY(3px);
+          }
+          .slot {
+            width: 1rem;
+            &.is-over {
+              fill: #f1f1f1;
+            }
+            fill: gold;
+            color: black;
+            &.number {
+              background-color: #c0c0c0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

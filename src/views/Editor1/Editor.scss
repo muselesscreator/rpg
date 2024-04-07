@@ -1,0 +1,137 @@
+.editor-wrapper {
+  .editor {
+    height: 560px;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  height: 100%;
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    border: 2px groove #f1f1f1;
+  }
+  .editor-nav, .editor-toolbox {
+    max-width: 300px;
+  }
+  .editor-nav, .editor-toolbox, .editor-content {
+    h3 {
+      margin: 0;
+    }
+    h4 { margin: 0.5rem };
+    .tool-list {
+      margin-left: 1rem;
+    }
+    .gem-container {
+      margin-bottom: 2px;
+    }
+    .gem {
+      position: relative;
+    }
+    .gem-contents {
+      background-color: red;
+      padding: 2px;
+      display: inline-block;
+      .cursor: 'move';
+      &.dragging {
+        border: 1px solid white;
+      }
+      border-radius: 5px;
+      z-index: 2;
+    }
+  }
+  .editor-zone {
+    height: 100%;
+    background: #1c1c1c;
+    margin: 1rem;
+    .editor-row {
+      &.is-over {
+        background-color: #f1f1f1;
+      }
+      background-color: #2c2c2c;
+      width: calc(100% - 16px);
+      height: 2rem;
+      line-height: 1.5rem;
+      padding: 8px;
+      margin-bottom: 9px;
+      &:nth-child(1) {
+        margin-top: 9px;
+      }
+    }
+    .gem {
+      .gem-text, .slot, .slot--filled {
+        &:not(:last-child) {
+          margin-right: 2px;
+        }
+        display: inline-block;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+      .slot-container {
+        transform: translateY(3px);
+      }
+      .slot {
+        width: 1rem;
+        &.is-over {
+          fill: #f1f1f1;
+        }
+        fill: gold;
+        color: black;
+        &.number {
+          background-color: #c0c0c0;
+        }
+      }
+      .slot--filled {
+        border: 1px solid white;
+      }
+    }
+  }
+  .editor-toolbox {
+    .gem-container {
+      margin-bottom: 4px;
+      position: relative;
+    }
+    .gem {
+      position: relative;
+      display: inline-block;
+    }
+    .gem-contents {
+      position: relative;
+      background-color: red;
+      padding: 2px;
+      display: inline-block;
+      border: 1px solid white;
+      .cursor: 'move';
+      &.dragging {
+        border: 2px solid yellow;
+      }
+      border-radius: 5px;
+      z-index: 2;
+    }
+    .gem-text, .slot-container {
+      &:not(:last-child) {
+        margin-right: 2px;
+      }
+      display: inline-block;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .slot-container {
+      transform: translateY(3px);
+    }
+    .slot {
+      width: 1rem;
+      &.is-over {
+        fill: #f1f1f1;
+      }
+      fill: gold;
+      color: black;
+      &.number {
+        background-color: #c0c0c0;
+      }
+    }
+  }
+}
